@@ -1,0 +1,416 @@
+// -----------------------------------------
+// Variables
+// -----------------------------------------
+$primary-color: #0d3b66; // Reliable Navy
+$secondary-color: #f4d35e; // Warning/Gold Accent
+$dark-neutral: #1d2d44; // Deep Slate
+$light-neutral: #f4f5f7; // Clean Off-white
+$text-dark: #222222;
+$whatsapp-green: #25d366;
+$border-color: #e2e8f0;
+
+// Breakpoints
+$tablet: 768px;
+$desktop: 1024px;
+
+// -----------------------------------------
+// Resets & Base Styles
+// -----------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: $text-dark;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// -----------------------------------------
+// Top bar & Header
+// -----------------------------------------
+.top-bar {
+  background-color: $dark-neutral;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 8px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.main-header {
+  background: #fff;
+  border-bottom: 1px solid $border-color;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  .header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo h2 {
+    color: $primary-color;
+    font-weight: 700;
+    span {
+      color: $secondary-color;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: $text-dark;
+      font-weight: 600;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+// -----------------------------------------
+// Buttons
+// -----------------------------------------
+.btn-primary {
+  background-color: $primary-color;
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btn-dark {
+  background-color: $dark-neutral;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-whatsapp {
+  background-color: $whatsapp-green;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp-sm {
+  background-color: $whatsapp-green;
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+// -----------------------------------------
+// Hero Section
+// -----------------------------------------
+.hero {
+  background: linear-gradient(135deg, $light-neutral 0%, #fff 100%);
+  padding: 80px 0;
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .badge {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: $dark-neutral;
+    margin: 15px 0;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .hero-image-placeholder {
+    background-color: $primary-color;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    min-height: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    .mock-card {
+      text-align: center;
+      .icon-large {
+        font-size: 3.5rem;
+        color: $secondary-color;
+        margin-bottom: 15px;
+      }
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------
+// Catalog Section
+// -----------------------------------------
+.catalog-section {
+  padding: 80px 0;
+  background-color: #fff;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    h2 {
+      font-size: 2.2rem;
+      color: $dark-neutral;
+    }
+    p {
+      color: #666;
+      max-width: 600px;
+      margin: 10px auto 0;
+    }
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .product-card {
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .stock-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+
+      &.in-stock {
+        background-color: rgba($whatsapp-green, 0.1);
+        color: $whatsapp-green;
+      }
+      &.low-stock {
+        background-color: rgba($secondary-color, 0.1);
+        color: darken($secondary-color, 30%);
+      }
+    }
+
+    .product-icon {
+      background-color: $light-neutral;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4rem;
+      color: $primary-color;
+    }
+
+    .product-info {
+      padding: 25px;
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        color: $dark-neutral;
+      }
+      .price {
+        color: $primary-color;
+        font-weight: 700;
+        font-size: 1.15rem;
+        margin-bottom: 12px;
+      }
+      .desc {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 20px;
+        min-height: 54px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------
+// Quote Form Section
+// -----------------------------------------
+.quote-section {
+  padding: 80px 0;
+  background-color: $light-neutral;
+
+  .quote-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .quote-info {
+    h2 {
+      font-size: 2.2rem;
+      color: $dark-neutral;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .contact-details p {
+      font-weight: 600;
+      margin-bottom: 10px;
+      i {
+        color: $primary-color;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .quote-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    .form-group {
+      margin-bottom: 20px;
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        font-family: inherit;
+        &:focus {
+          outline: 1px solid $primary-color;
+        }
+      }
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      &:hover {
+        background-color: $dark-neutral;
+      }
+    }
+  }
+}
+
+// -----------------------------------------
+// Footer
+// -----------------------------------------
+.footer {
+  background-color: $dark-neutral;
+  color: #fff;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+// -----------------------------------------
+// Responsive Media Queries (Mobile-first fallback)
+// -----------------------------------------
+@media (max-width: $tablet) {
+  .main-header .nav-links {
+    display: none;
+  } // Hide regular nav to simulate standard mobile experience
+  .hero .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .quote-section .quote-container {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
